@@ -1,15 +1,21 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
-import { LogIn } from './components/LogIn/LogIn';
+import { LogIn } from "./components/LogIn/LogIn";
+import { Orders } from "./components/Orders/Orders";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <LogIn />
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LogIn />} />
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

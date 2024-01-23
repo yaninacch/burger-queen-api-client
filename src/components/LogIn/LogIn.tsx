@@ -4,9 +4,10 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const loginUser = async (credentials: { email: string; password: string }) => {
-  return fetch(" http://localhost:8080/login", {
+  return fetch("http://localhost:8080/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,6 +22,8 @@ export const LogIn = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (event: any) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -31,15 +34,22 @@ export const LogIn = () => {
     const response = await loginUser(formData);
     console.log(response);
 
-    if ("accessToken" in response) {
+    if (response.accessToken) {
       Swal.fire({
         title: "Sucess!",
         icon: "success",
       });
       localStorage.setItem("accessToken", response.accessToken);
       localStorage.setItem("email", response.user.email);
+      navigate('/orders');
     } else {
 
+      Swal.fire({
+        title: 'Error!',
+        text: 'Ingrese un email y usuario correcto!',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
     }
   };
 
@@ -52,7 +62,7 @@ export const LogIn = () => {
           <Form.Control
             id="input-email"
             type="email"
-            placeholder="Enter email"
+            placeholder="Ingresar email"
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -63,7 +73,7 @@ export const LogIn = () => {
           <Form.Control
             id="input-pass"
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             name="password"
             value={formData.password}
             onChange={handleChange}

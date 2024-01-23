@@ -49,6 +49,26 @@ body{
   margin-top: 1rem;
 }
 
+.orders-div{
+  display: flex;
+  margin-top: 5rem;
+  height: 20%;
+  width: 54.5%;
+  justify-content: center;
+
+}
+.title-orders{
+  color: red;
+  background-color:burlywood;
+  padding: 1rem;
+  font-size: 4rem;
+}
+
+.logo-orders{
+  width: 25%;
+  height: 5%;
+}
+
 @media screen and (max-width: 1024px) {
 
  
