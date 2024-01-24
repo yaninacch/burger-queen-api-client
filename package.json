@@ -1,4 +1,5 @@
 {
+  "homepage": "https://yaninacch.github.io/burger-queen-api-client/",
   "name": "burger-queen-api-client",
   "version": "0.1.0",
   "private": true,
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2"
+    "@testing-library/react": "^14.1.2",
+    "gh-pages": "^6.1.1"
   }
 }
