@@ -58,29 +58,29 @@ export const LogIn = () => {
       <img className="logo" src={LogoImg} alt="logo" />
       <Form className="login-form" onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label className="user">Ingrese su e-mail</Form.Label>
+          <Form.Label className="user">Enter e-mail</Form.Label>
           <Form.Control
             id="input-email"
             type="email"
-            placeholder="Ingresar email"
+            placeholder="Enter email"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label className="user">Contraseña</Form.Label>
+          <Form.Label className="user">Password</Form.Label>
           <Form.Control
             id="input-pass"
             type="password"
-            placeholder="Contraseña"
+            placeholder="Password"
             name="password"
             value={formData.password}
             onChange={handleChange}
           />
         </Form.Group>
         <Button className="submit-btn" variant="danger" type="submit">
-          Iniciar Sesión
+          Submit
         </Button>
       </Form>
     </>

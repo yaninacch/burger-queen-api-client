@@ -14,7 +14,7 @@ jest.mock("react-router-dom", () => ({
 
 test("renders learn react link", () => {
   render(<BrowserRouter><LogIn /></BrowserRouter>);
-  const linkElement = screen.getByText(/Ingrese/i);
+  const linkElement = screen.getByText(/Enter/i);
   expect(linkElement).toBeInTheDocument();
 });
 
@@ -27,20 +27,20 @@ describe("login", () => {
   });
   test("email field should have label", () => {
     render(<BrowserRouter><LogIn /></BrowserRouter>);
-    const emailInputNode = screen.getByText("Ingrese su e-mail");
+    const emailInputNode = screen.getByText("Enter e-mail");
     expect(emailInputNode).toBeInTheDocument();
   });
   test("LogIn must have a password label", () => {
     render(<BrowserRouter><LogIn /></BrowserRouter>);
-    const labelPassword = screen.getByText("Contraseña");
+    const labelPassword = screen.getByText("Password");
     expect(labelPassword).toBeInTheDocument();
   });
   test("should call handle submit and call Login endpoint", async () => {
     render(<BrowserRouter><LogIn /></BrowserRouter>);
-    fireEvent.change(screen.getByPlaceholderText("Ingresar email"), {
+    fireEvent.change(screen.getByPlaceholderText("Enter email"), {
       target: { value: "test@example.com" },
     });
-    fireEvent.change(screen.getByPlaceholderText("Contraseña"), {
+    fireEvent.change(screen.getByPlaceholderText("Password"), {
       target: { value: "testPassword" },
     });
 
@@ -54,7 +54,7 @@ describe("login", () => {
     } as any);
 
     // Trigger form submission
-    fireEvent.click(screen.getByText("Iniciar Sesión"));
+    fireEvent.click(screen.getByText("Submit"));
 
     // Wait for the asynchronous code to execute
     await waitFor(() => {

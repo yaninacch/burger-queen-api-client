@@ -51,10 +51,11 @@ body{
 
 .orders-div{
   display: flex;
-  margin-top: 5rem;
+  margin-top: 1rem;
   height: 20%;
-  width: 54.5%;
+  width: 47.3%;
   justify-content: center;
+  margin-left: 10rem;
 
 }
 .title-orders{
@@ -65,8 +66,75 @@ body{
 }
 
 .logo-orders{
-  width: 25%;
+  width: 24%;
   height: 5%;
+}
+
+.orders-container{
+  background-color: burlywood;
+  width: 90%;
+  height: 45rem;
+  margin-top: 2rem;
+  display: flex;
+  border-radius: 10px;
+}
+#customer-form{
+  margin-left: 18rem;
+  max-height: 125px;
+  position: absolute;
+}
+.customer-label{
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+#meal-btn{
+  margin-top: 2rem;
+  max-height: 50px;
+  position: absolute;
+}
+.meal{
+  width: 10rem;
+  height: 3rem;
+  margin-top: 7rem;
+  margin-left: 1rem;
+}
+
+#ul-cards{
+  margin-top: 14rem;
+  width: 60rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cards{
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  height: 14rem;
+  margin: 0.5rem;
+}
+
+#cards-img{
+  height: 5rem;
+  width: 5rem;
+  margin-top: 0.5rem;
+}
+#product-name{
+  font-size: 15px;
+}
+.add-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.list-container{
+  background-color: white;
+  width: 45%;
+  height: 20%;
+  margin-top: 15rem;
+  margin-right: 1rem;
+
 }
 
 @media screen and (max-width: 1024px) {
