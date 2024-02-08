@@ -41,6 +41,7 @@ export const LogIn = () => {
       });
       localStorage.setItem("accessToken", response.accessToken);
       localStorage.setItem("email", response.user.email);
+      localStorage.setItem("userId", response.user.id);
       navigate('/orders');
     } else {
 
@@ -57,10 +58,10 @@ export const LogIn = () => {
     <>
       <img className="logo" src={LogoImg} alt="logo" />
       <Form className="login-form" onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3 input-form">
           <Form.Label className="user">Enter e-mail</Form.Label>
           <Form.Control
-            id="input-email"
+            className="input-login"
             type="email"
             placeholder="Enter email"
             name="email"
@@ -68,10 +69,10 @@ export const LogIn = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3 input-form">
           <Form.Label className="user">Password</Form.Label>
           <Form.Control
-            id="input-pass"
+            className="input-login"
             type="password"
             placeholder="Password"
             name="password"
